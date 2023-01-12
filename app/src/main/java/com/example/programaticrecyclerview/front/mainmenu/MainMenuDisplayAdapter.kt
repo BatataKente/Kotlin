@@ -5,11 +5,11 @@ import android.content.Intent
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
+import androidx.recyclerview.widget.RecyclerView.ViewHolder
 
 class MainMenuDisplayAdapter(private val context: Context,
                              private val values: MutableList<Class<AppCompatActivity>>)
     : RecyclerView.Adapter<MainMenuDisplayAdapter.MainMenuViewHolder>() {
-    override fun getItemCount(): Int = values.size
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MainMenuViewHolder {
         val mainMenuLinearLayout = MainMenuLinearLayout(context)
         return MainMenuViewHolder(mainMenuLinearLayout)
@@ -23,5 +23,6 @@ class MainMenuDisplayAdapter(private val context: Context,
             )
         }
     }
-    inner class MainMenuViewHolder(layout: MainMenuLinearLayout) : RecyclerView.ViewHolder(layout)
+    override fun getItemCount(): Int = values.size
+    inner class MainMenuViewHolder(layout: MainMenuLinearLayout) : ViewHolder(layout)
 }

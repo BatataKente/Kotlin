@@ -26,7 +26,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".front.red.RedActivity"
+            android:name=".front.red.DigimonActivity"
             android:exported="true">
             <meta-data
                 android:name="android.app.lib_name"
