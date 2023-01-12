@@ -6,8 +6,9 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
 class MainMenuRecyclerView(context: Context) : RecyclerView(context) {
+    companion object {val spanCount = 4}
     init {
-        this.layoutManager = GridLayoutManager(context, 2)
+        this.layoutManager = GridLayoutManager(context, spanCount)
         this.setHasFixedSize(true)
     }
 }
