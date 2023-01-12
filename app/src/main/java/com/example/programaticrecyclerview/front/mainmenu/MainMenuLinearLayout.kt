@@ -22,7 +22,7 @@ class MainMenuLinearLayout(context: Context) : LinearLayout(context) {
         this.id = generateViewId()
         this.layoutParams = ViewGroup.LayoutParams(
             ViewGroup.LayoutParams.MATCH_PARENT,
-            context.resources.displayMetrics.widthPixels/MainMenuRecyclerView.spanCount
+            context.resources.displayMetrics.widthPixels/MainMenuRecyclerView.spanCount/2
         )
         this.orientation = VERTICAL
         this.addView(textView)
