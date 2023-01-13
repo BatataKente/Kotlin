@@ -7,7 +7,11 @@ import android.widget.TextView
 import com.example.programaticrecyclerview.utils.extensions.TextView.default
 
 class MainMenuLinearLayout(context: Context) : LinearLayout(context) {
-    val textView = TextView(context).default
+    val textView = TextView(context).default.apply {
+        layoutParams = LayoutParams(
+            LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT
+        )
+    }
     init {
         this.id = generateViewId()
         this.layoutParams = ViewGroup.LayoutParams(

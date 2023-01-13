@@ -5,8 +5,8 @@ import android.os.Bundle
 import com.example.programaticrecyclerview.front.red.DigimonActivity
 
 class MainMenuActivity : AppCompatActivity() {
-    val coisas: MutableList<Class<AppCompatActivity>> = mutableListOf(
-        DigimonActivity().javaClass
+    val activities: MutableList<AppCompatActivity> = mutableListOf(
+        DigimonActivity()
     )
     private lateinit var view: MainMenuRecyclerView
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -16,7 +16,7 @@ class MainMenuActivity : AppCompatActivity() {
     }
     fun loadData() {
         view = MainMenuRecyclerView(this).apply {
-            adapter = MainMenuDisplayAdapter(context, coisas)
+            adapter = MainMenuDisplayAdapter(context, activities)
         }
     }
 }

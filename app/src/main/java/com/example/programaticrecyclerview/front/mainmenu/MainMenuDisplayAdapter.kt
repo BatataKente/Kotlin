@@ -6,9 +6,10 @@ import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
+import com.example.programaticrecyclerview.utils.extensions.javaClass.lastName
 
 class MainMenuDisplayAdapter(private val context: Context,
-                             private val values: MutableList<Class<AppCompatActivity>>)
+                             private val values: MutableList<AppCompatActivity>)
     : RecyclerView.Adapter<MainMenuDisplayAdapter.MainMenuViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MainMenuViewHolder {
         val mainMenuLinearLayout = MainMenuLinearLayout(context)
@@ -16,10 +17,10 @@ class MainMenuDisplayAdapter(private val context: Context,
     }
     override fun onBindViewHolder(holder: MainMenuViewHolder, position: Int) {
         val itemView = holder.itemView as? MainMenuLinearLayout
-        itemView?.textView?.text = values[position].name.split(".").last()
+        itemView?.textView?.text = values[position].lastName
         itemView?.textView?.setOnClickListener {
             context.startActivity(
-                Intent(context, values[position])
+                Intent(context, values[position].javaClass)
             )
         }
     }
