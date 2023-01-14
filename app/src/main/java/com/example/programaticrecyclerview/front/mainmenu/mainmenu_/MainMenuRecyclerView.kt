@@ -1,4 +1,4 @@
-package com.example.programaticrecyclerview.front.mainmenu
+package com.example.programaticrecyclerview.front.mainmenu.mainmenu_
 
 import android.content.Context
 import androidx.recyclerview.widget.GridLayoutManager

@@ -1,15 +1,13 @@
-package com.example.programaticrecyclerview.front.mainmenu
+package com.example.programaticrecyclerview.front.mainmenu.mainmenu_
 
 import android.content.Context
-import android.content.Intent
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
-import com.example.programaticrecyclerview.utils.extensions.javaClass.lastName
 
 class MainMenuDisplayAdapter(private val context: Context,
-                             private val values: MutableList<AppCompatActivity>)
+                             private val activities: MutableList<AppCompatActivity>)
     : RecyclerView.Adapter<MainMenuDisplayAdapter.MainMenuViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MainMenuViewHolder {
         val mainMenuLinearLayout = MainMenuLinearLayout(context)
@@ -17,13 +15,8 @@ class MainMenuDisplayAdapter(private val context: Context,
     }
     override fun onBindViewHolder(holder: MainMenuViewHolder, position: Int) {
         val itemView = holder.itemView as? MainMenuLinearLayout
-        itemView?.textView?.text = values[position].lastName
-        itemView?.textView?.setOnClickListener {
-            context.startActivity(
-                Intent(context, values[position].javaClass)
-            )
-        }
+        itemView?.setup(activities[position])
     }
-    override fun getItemCount(): Int = values.size
+    override fun getItemCount(): Int = activities.size
     inner class MainMenuViewHolder(layout: MainMenuLinearLayout) : ViewHolder(layout)
 }

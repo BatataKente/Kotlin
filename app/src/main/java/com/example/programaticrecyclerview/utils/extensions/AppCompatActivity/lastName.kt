@@ -1,4 +1,4 @@
-package com.example.programaticrecyclerview.utils.extensions.javaClass
+package com.example.programaticrecyclerview.utils.extensions.AppCompatActivity
 
 import androidx.appcompat.app.AppCompatActivity
 

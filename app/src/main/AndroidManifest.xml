@@ -13,20 +13,25 @@
         android:theme="@style/Theme.ProgramaticRecyclerView"
         tools:targetApi="31">
         <activity
-            android:name=".front.mainmenu.MainMenuActivity"
+            android:name=".front.mainmenu.mainmenu_.MainMenuActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".front.red.DigimonActivity"
+            android:name=".front.mainmenu.digimons.digimons_.DigimonsActivity"
+            android:exported="true">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".front.mainmenu.digimons.digimon.digimon_.DigimonActivity"
             android:exported="true">
             <meta-data
                 android:name="android.app.lib_name"

@@ -1,12 +1,12 @@
-package com.example.programaticrecyclerview.front.mainmenu
+package com.example.programaticrecyclerview.front.mainmenu.mainmenu_
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.programaticrecyclerview.front.red.DigimonActivity
+import com.example.programaticrecyclerview.front.mainmenu.digimons.digimons_.DigimonsActivity
 
 class MainMenuActivity : AppCompatActivity() {
     val activities: MutableList<AppCompatActivity> = mutableListOf(
-        DigimonActivity()
+        DigimonsActivity()
     )
     private lateinit var view: MainMenuRecyclerView
     override fun onCreate(savedInstanceState: Bundle?) {
