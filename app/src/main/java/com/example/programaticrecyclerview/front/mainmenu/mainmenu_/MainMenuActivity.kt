@@ -1,11 +1,13 @@
-package com.example.programaticrecyclerview.front.mainmenu
+package com.example.programaticrecyclerview.front.mainmenu.mainmenu_
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.programaticrecyclerview.front.red.RedActivity
+import com.example.programaticrecyclerview.front.mainmenu.digimons.digimons_.DigimonsActivity
 
 class MainMenuActivity : AppCompatActivity() {
-    val coisas: MutableList<Class<AppCompatActivity>> = mutableListOf(RedActivity().javaClass)
+    val activities: MutableList<AppCompatActivity> = mutableListOf(
+        DigimonsActivity()
+    )
     private lateinit var view: MainMenuRecyclerView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -14,7 +16,7 @@ class MainMenuActivity : AppCompatActivity() {
     }
     fun loadData() {
         view = MainMenuRecyclerView(this).apply {
-            this.adapter = MainMenuDisplayAdapter(context, coisas)
+            adapter = MainMenuDisplayAdapter(context, activities)
         }
     }
 }

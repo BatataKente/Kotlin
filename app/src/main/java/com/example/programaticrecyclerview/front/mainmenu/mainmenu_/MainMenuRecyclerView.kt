@@ -1,13 +1,13 @@
-package com.example.programaticrecyclerview.front.mainmenu
+package com.example.programaticrecyclerview.front.mainmenu.mainmenu_
 
 import android.content.Context
-import android.graphics.Color
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
 class MainMenuRecyclerView(context: Context) : RecyclerView(context) {
+    companion object {val spanCount = 3}
     init {
-        this.layoutManager = GridLayoutManager(context, 2)
+        this.layoutManager = GridLayoutManager(context, spanCount)
         this.setHasFixedSize(true)
     }
 }
